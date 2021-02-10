@@ -1,0 +1,22 @@
+.FormElements input {
+  padding: 1vw 2vw;
+  width: 22vw;
+  margin: 1vw 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #fdf5e6;
+}
+
+input::placeholder {
+  color: black;
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+  .FormElements input {
+    padding: 1.1vw 2vw;
+    width: 37vw;
+  }
+}

@@ -1,0 +1,48 @@
+.Register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3vw;
+  height: 50vw;
+}
+
+.Register__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url('../../../assets/register__background.JPG');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100vw;
+  padding: 4vw;
+  border-radius: 40% 10% 40% 10%;
+}
+
+.Register__container__signin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fdf5e6;
+  opacity: 80%;
+  border-radius: 10%;
+  margin-top: 2vw;
+}
+.Register__container__signin span {
+  cursor: unset;
+}
+.Register__container__input {
+  opacity: 90%;
+}
+
+@media (max-width: 768px) {
+  .Register__container {
+    background-size: 135vw;
+    padding: 6vw;
+  }
+  .Register__container__signin{
+    font-size: 8px;
+  }
+  .Register__container__signin span, a{
+    padding: 0.5vw;
+  }
+}

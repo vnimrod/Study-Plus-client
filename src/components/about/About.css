@@ -1,0 +1,7 @@
+.About{
+  display: flex;
+  justify-content: center;
+  z-index: 200;
+  height:95vh;
+  margin-top:90px;
+}
