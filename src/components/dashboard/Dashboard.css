@@ -1,0 +1,13 @@
+.Dashboard{
+  background-color: grey;
+}
+
+.Dashboard__button{
+  padding:10px;
+}
+
+.Dashboard__new-course-arr{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

@@ -1,0 +1,24 @@
+.Alert {
+  padding: 7px;
+  border-radius: 4px;
+  margin: 1vw;
+  width: 35vw;
+  border: 1px solid transparent;
+}
+
+.Alert__error {
+  background-color: #f2dede;
+  border-color: #c9aab0;
+  color: #a94442;
+}
+.Alert__success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #3c763d;
+}
+
+@media (max-width: 768px) {
+  .Alert {
+    width: 95vw;
+  }
+}

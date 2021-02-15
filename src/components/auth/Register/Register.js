@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { register } from '../../../store/actions/auth';
+import { validatorTypeAlert } from '../../../store/actions/validators';
 
 import Input from '../../../shared/form-elements/Input';
 import Button from '../../../shared/form-elements/Button';
 import './Register.css';
+import { Redirect } from 'react-router-dom';
 
-const Register = ({ register }) => {
+const Register = ({ register, validatorTypeAlert, isAuth }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -23,13 +25,18 @@ const Register = ({ register }) => {
   const formSubmitHandler = async (e) => {
     e.preventDefault();
     if (password !== password2) {
-      console.log('pass dont match');
+      validatorTypeAlert('Please check you passwords: They dont match', "error");
     } else {
       register({ name, email, password });
     }
   };
+
+  if(isAuth) {
+    return <Redirect to='/dashboard'/>
+  }
+
   return (
-    <form className="Register">
+    <form className="Register" onSubmit={formSubmitHandler}>
       <div className="Register__container">
         <div className="Register__container__input">
           <Input
@@ -71,7 +78,7 @@ const Register = ({ register }) => {
         <div className="Register__container__signin">
           <span>Have an account?</span>
           <Button to="/login" exact="true" link>
-            Sign In
+            Login
           </Button>
         </div>
       </div>
@@ -79,4 +86,8 @@ const Register = ({ register }) => {
   );
 };
 
-export default connect(null, { register })(Register);
+const mapStateToProps = state => ({
+  isAuth: state.auth.isAuth
+})
+
+export default connect(mapStateToProps, { register, validatorTypeAlert })(Register);

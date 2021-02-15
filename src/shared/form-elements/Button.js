@@ -27,9 +27,9 @@ const Button = (props) => {
         to={props.to}
         exact={props.exact}
         onClick={props.onClick}
-        className={`${props.button} button--${
-          props.inverse && 'button--inverse'
-        } ${props.danger && 'button--danger'} ${props.link && 'button--link'}`}
+        className={`button button--${props.inverse && 'button--inverse'} ${
+          props.danger && 'button--danger'
+        }`}
       >
         {props.children}
       </Link>
