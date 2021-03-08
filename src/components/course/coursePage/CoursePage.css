@@ -1,0 +1,35 @@
+.CoursePage{
+  background-color: #696969;
+  min-height: 100vh;
+}
+.CoursePage__header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  background-color: #d3d3d3;
+  font-size: 2vw;
+  font-weight: bold;
+  font-family: 'Rubik', sans-serif;
+}
+
+.CoursePage__header a{
+  padding: 0.5vw;
+}
+
+.CoursePage__header button{
+  font-size: 20px;
+}
+
+.CoursePage__header span{
+  background-color: #fdf5e6;
+  box-shadow: 0 0 10px #000000;
+  cursor: unset;
+  border-radius: 10%;
+  align-self: center;
+}
+
+.CoursePage__new-subject{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}

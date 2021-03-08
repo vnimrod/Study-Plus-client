@@ -36,11 +36,11 @@ const StaticCourse = ({ deleteCourse, cid, courseName, courseInfo, color }) => {
       >
         <NavigationItem to={`/dashboard/${cid}/${courseName}`}>
           <div className="StaticCourse__span-title">
-            <span>Course:</span>
+            <span id="title">Course:</span>
             <span>{courseName}</span>
           </div>
           <div className="StaticCourse__span-title">
-            <span>About:</span>
+            <span id="title">About:</span>
             <span>{courseInfo}</span>
           </div>
         </NavigationItem>

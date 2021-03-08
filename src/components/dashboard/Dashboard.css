@@ -1,13 +1,29 @@
-.Dashboard{
-  background-color: grey;
+.Dashboard__header {
+  padding: 10px;
+  background-color: #d3d3d3;
 }
 
-.Dashboard__button{
-  padding:10px;
+.Dashboard__button {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  width: 55%;
 }
 
-.Dashboard__new-course-arr{
+.Dashboard__button button {
+  align-self: center;
+  font-size: 20px;
+  
+}
+
+.Dashboard__new-course-arr {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.Dashboard__courses {
+  background-color: #696969;
+  min-height: 100vh;
+}
+

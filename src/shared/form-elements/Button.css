@@ -1,12 +1,13 @@
 .button {
   padding: 0.6vw 1vw;
   background-color: #fdf5e6;
-  border-radius: 10%;
+  border-radius: 20%;
   color: black;
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
   font-weight: bold;
+  font-family: 'Lato', sans-serif;
 }
 
 .button:focus {
@@ -15,7 +16,8 @@
 
 .button:hover,
 .button:active {
-  background-color: #faebd7;
+  background-color: grey;
+  color:white;
   transition: background-color 750ms cubic-bezier(0.1, 0, 0.2, 1);
 }
 .button--link {

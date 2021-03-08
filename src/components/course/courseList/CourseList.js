@@ -1,35 +1,35 @@
-import React, { useEffect } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import { getCourses } from '../../../store/actions/courses';
 import StaticCourse from '../courseItem/StaticCourse';
+import Spinner from '../../../shared/spinner/Spinner'
 import './CourseList.css';
 
-const CourseList = ({ getCourses, auth, courses: { courses, loading } }) => {
-
+const CourseList = ({ getCourses, courses: { courses, loading } }) => {
   useEffect(() => {
     getCourses();
   }, []);
 
+  console.log(courses.length);
   return (
     <div className="CourseList">
-      {courses.map((course) => {
+      {!loading ? courses.map((course) => {
         return (
           <StaticCourse
-            cid = {course._id}
+            cid={course._id}
             courseName={course.courseName}
             courseInfo={course.courseInfo}
             color={course.color}
           />
         );
-      })}
+      }): <Spinner/>} 
     </div>
   );
 };
 
 const mapStateToProps = (state) => ({
-  courses: state.courses,
-  auth: state.auth,
+  courses: state.courses
 });
 
 export default connect(mapStateToProps, { getCourses })(CourseList);

@@ -1,6 +1,6 @@
 .BackgroundSlice {
   display: flex;
-  position:absolute;
+  /* position:absolute; */
   justify-content: center;
   /* position: relative; */
   width: 100%;

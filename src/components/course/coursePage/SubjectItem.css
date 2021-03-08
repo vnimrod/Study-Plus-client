@@ -1,0 +1,26 @@
+.SubjectItem{
+  display: flex;
+  margin: 10px;
+  background-color: #fff;
+  width: 30vw;
+  height:auto;
+  box-shadow: 0 0 10px #000000;
+  border-radius: 1%;
+}
+
+.SubjectItem__form{
+  
+}
+
+.SubjectItem__form__input{
+  display: flex;
+  align-items: center;
+  padding: 1vw;
+}
+.SubjectItem__form__input button{
+  margin-left: 1vw;
+}
+
+.SubjectItem__form__input span{
+  cursor: unset;
+}
