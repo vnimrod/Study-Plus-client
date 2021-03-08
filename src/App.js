@@ -8,7 +8,7 @@ import Login from './components/auth/Login/Login';
 import Register from './components/auth/Register/Register';
 import Alert from './hoc/Alert/Alert';
 import Dashboard from './components/dashboard/Dashboard';
-import coursePage from './components/course/coursePage/CoursePage';
+import coursePage from './pages/CoursePage'
 import './App.css';
 
 //helpers
@@ -44,7 +44,7 @@ const App = () => {
               <Register />
             </Route>
             <AuthRoute exact path="/dashboard" component={Dashboard} />
-            <AuthRoute exact path="/dashboard/:cid/:coursename" component={coursePage}/>
+            <AuthRoute exact path="/dashboard/course/:coursename/subjects" component={coursePage}/>
           </Switch>
         </Layout>
       </Router>

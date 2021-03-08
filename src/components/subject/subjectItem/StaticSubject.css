@@ -1,0 +1,17 @@
+.StaticSubject{
+  display: flex;
+  margin: 10px;
+  background-color: #fff;
+  width: 30vw;
+  height:auto;
+  box-shadow: 0 0 10px #000000;
+  border-radius: 1%;
+}
+
+.StaticSubject button{
+  margin-left: 1vw;
+}
+
+.StaticSubject span{
+  cursor: unset;
+}

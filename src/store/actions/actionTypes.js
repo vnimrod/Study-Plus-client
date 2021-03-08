@@ -13,3 +13,8 @@ export const COURSE_ERROR = 'COURSE_ERROR';
 export const GET_COURSES = "GET_COURSES";
 export const DELETE_COURSE = "DELETE_COURSE";
 export const UPDATE_COURSE = "UPDATE_COURSE";
+
+export const CREATE_SUBJECT = 'CREATE_SUBJECT';
+export const SUBJECT_ERROR = 'SUBJECT_ERROR';
+export const GET_SUBJECTS = 'GET_SUBJECTS';
+export const DELETE_SUBJECT = 'DELETE_SUBJECT';

@@ -1,28 +1,33 @@
 import React, { Fragment, useState } from 'react';
+import { connect } from 'react-redux';
 
+import { createSubject } from '../../../store/actions/subjects';
 import Input from '../../../shared/form-elements/Input';
 import Button from '../../../shared/form-elements/Button';
 import './SubjectItem.css';
 
-const SubjectItem = () => {
-  const [subject, setSubject] = useState('');
+const SubjectItem = ({ createSubject }) => {
+  const [subject, setSubject] = useState({
+    subjectName: '',
+  });
   const [staticSubject, setStaticSubject] = useState(false);
 
   const subjectHandler = (e) => {
-    setSubject(e.target.value);
+    setSubject({ ...subject, subjectName: e.target.value });
   };
 
   const formSubmitHandler = (e) => {
     e.preventDefault();
     setStaticSubject(!staticSubject);
+    createSubject(subject);
   };
 
   return (
-    <div className="SubjectItem">
-      <form className="SubjectItem__form" onSubmit={formSubmitHandler}>
-        <div className="SubjectItem__form__input">
-          {!staticSubject ? (
-            <Fragment>
+    <Fragment>
+      {!staticSubject ? (
+        <div className="SubjectItem">
+          <form className="SubjectItem__form" onSubmit={formSubmitHandler}>
+            <div className="SubjectItem__form__input">
               <Input
                 onChange={subjectHandler}
                 element="input"
@@ -30,18 +35,12 @@ const SubjectItem = () => {
                 required
               />
               <Button type="submit">✔</Button>
-            </Fragment>
-          ) : (
-            <Fragment>
-              <span>{subject}</span>
-              <Button type="button">Upload</Button>
-              <Button type="button">X</Button>
-            </Fragment>
-          )}
+            </div>
+          </form>
         </div>
-      </form>
-    </div>
+      ) : null}
+    </Fragment>
   );
 };
 
-export default SubjectItem;
+export default connect(null, { createSubject })(SubjectItem);

@@ -34,7 +34,7 @@ const StaticCourse = ({ deleteCourse, cid, courseName, courseInfo, color }) => {
             : 'inherit',
         }}
       >
-        <NavigationItem to={`/dashboard/${cid}/${courseName}`}>
+        <NavigationItem to={`/dashboard/course/${courseName}/subjects`}>
           <div className="StaticCourse__span-title">
             <span id="title">Course:</span>
             <span>{courseName}</span>
