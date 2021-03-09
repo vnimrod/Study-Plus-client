@@ -72,7 +72,7 @@ const CourseItem = ({ createCourse, updateCourse, cid, editCourse, course, Info,
             onChange={formChangeHandler}
             placeholder="Course Name"
             required
-            maxlength="40"
+            maxLength="40"
           />
           <label>About:</label>
           <Input
@@ -83,7 +83,7 @@ const CourseItem = ({ createCourse, updateCourse, cid, editCourse, course, Info,
             defaultValue={Info}
             onChange={formChangeHandler}
             placeholder="Course information"
-            maxlength="40"
+            maxLength="40"
           />
           <div className="CourseItem__container__button">
             <Button type="button" onClick={colorClickedHandler}>

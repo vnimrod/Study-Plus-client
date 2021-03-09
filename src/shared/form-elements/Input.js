@@ -15,8 +15,9 @@ const Input = (props) => {
           value={props.value}
           onChange={props.onChange}
           required={props.required}
-          maxlength={props.maxlength}
+          maxLength={props.maxlength}
           defaultValue={props.defaultValue}
+          
         />
       );
       break;
@@ -30,7 +31,7 @@ const Input = (props) => {
           required={props.required}
           placeholder={props.placeholder}
           onFocus={props.onFocus}
-          maxlength={props.maxlength}
+          maxLength={props.maxlength}
           defaultValue={props.defaultValue}
         />
       );

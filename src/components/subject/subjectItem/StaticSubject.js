@@ -6,18 +6,27 @@ import Button from '../../../shared/form-elements/Button';
 import './StaticSubject.css';
 
 const StaticSubject = ({ subjectName, sid, deleteSubject }) => {
-
   const deleteSubjectHandler = (sid) => {
     deleteSubject(sid);
   };
 
   return (
     <div className="StaticSubject">
-      <span>{subjectName}</span>
-      <Button type="button">Upload</Button>
-      <Button onClick={() => deleteSubjectHandler(sid)} type="button">
-        X
-      </Button>
+      <div className="StaticSubject__items">
+        <span>{subjectName}</span>
+        <div className="StaticSubject__button">
+          <Button type="button">Upload</Button>
+          <Button onClick={() => deleteSubjectHandler(sid)} type="button">
+            X
+          </Button>
+        </div>
+      </div>
+
+      <ul>
+        <li>קובץ 1</li>
+        <li>קובץ 2</li>
+        <li>3 קובץ</li>
+      </ul>
     </div>
   );
 };

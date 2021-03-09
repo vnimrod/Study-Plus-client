@@ -18,8 +18,10 @@ const CoursePage = ({ getSubjects, subjects: { subjects, loading } }) => {
   const [newSubject, setNewSubject] = useState([]);
 
   const newCourseHandler = () => {
-    setNewSubject([...newSubject, <SubjectItem />]);
+    setNewSubject([...newSubject, <SubjectItem key={newSubject.length}/>]);
+    console.log(newSubject.length)
   };
+  
 
   return (
     <div className="CoursePage">

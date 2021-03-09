@@ -1,4 +1,4 @@
-.CoursePage{
+.CoursePage {
   background-color: #696969;
   min-height: 100vh;
 }
@@ -12,15 +12,16 @@
   font-family: 'Rubik', sans-serif;
 }
 
-.CoursePage__header a{
+.CoursePage__header a {
   padding: 0.5vw;
+  align-self: center;
 }
 
-.CoursePage__header button{
-  font-size: 20px;
+.CoursePage__header button {
+  font-size: 1.7vw;
 }
 
-.CoursePage__header span{
+.CoursePage__header span {
   background-color: #fdf5e6;
   box-shadow: 0 0 10px #000000;
   cursor: unset;
@@ -28,8 +29,23 @@
   align-self: center;
 }
 
-.CoursePage__new-subject{
+.CoursePage__new-subject {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .CoursePage__header a {
+    padding: 1.7vw;
+    font-size: 3vw;
+  }
+  .CoursePage__header button {
+    font-size: 3.5vw;
+    padding: 1.5vw;
+  }
+  .CoursePage__header span {
+    padding:1.5vw;
+    font-size: 3vw;
+  }
 }

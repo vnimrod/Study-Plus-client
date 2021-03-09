@@ -1,11 +1,18 @@
 .StaticSubject{
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   margin: 10px;
   background-color: #fff;
-  width: 30vw;
+  width: 50%;
+  padding: 1vw;
   height:auto;
   box-shadow: 0 0 10px #000000;
   border-radius: 1%;
+}
+
+.StaticSubject__items{
+  display: inherit;
 }
 
 .StaticSubject button{
@@ -14,4 +21,8 @@
 
 .StaticSubject span{
   cursor: unset;
+}
+
+.StaticSubject__button{
+  text-align: center;
 }
