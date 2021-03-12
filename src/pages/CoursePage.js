@@ -8,6 +8,7 @@ import SubjectItem from '../components/subject/subjectItem/SubjectItem';
 import SubjectList from '../components/subject/subjectList/SubjectList';
 import Spinner from '../shared/spinner/Spinner';
 import './CoursePage.css';
+import course from '../store/reducers/courses';
 
 const CoursePage = ({
   getCourse,
@@ -39,7 +40,7 @@ const CoursePage = ({
         {courses.loading ? (
           <Spinner />
         ) : (
-          <SubjectList subjects={courses.course.subjects} cid={cid} />
+          <SubjectList color = {courses.course !== null ? courses.course.color : null} subjects={courses.course !== null ? courses.course.subjects : null} cid={cid} />
         )}
       </div>
     </div>

@@ -1,5 +1,4 @@
 import * as actionTypes from '../actions/actionTypes';
-import subject from './subjects';
 
 const initialState = {
   courses: [],
