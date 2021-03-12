@@ -44,7 +44,7 @@ const App = () => {
               <Register />
             </Route>
             <AuthRoute exact path="/dashboard" component={Dashboard} />
-            <AuthRoute exact path="/dashboard/course/:coursename/subjects" component={coursePage}/>
+            <AuthRoute exact path="/dashboard/course/:coursename/:cid/subjects" component={coursePage}/>
           </Switch>
         </Layout>
       </Router>

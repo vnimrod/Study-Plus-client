@@ -1,3 +1,4 @@
 .SubjectList{
   display: flex;
+  flex-wrap: wrap;
 }

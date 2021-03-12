@@ -1,7 +1,9 @@
 import * as actionTypes from '../actions/actionTypes';
+import subject from './subjects';
 
 const initialState = {
   courses: [],
+  course: null,
   loading: true,
   error: {},
 };
@@ -15,6 +17,12 @@ const course = (state = initialState, action) => {
       return {
         ...state,
         courses: [...state.courses, payload],
+        loading: false,
+      };
+    case actionTypes.GET_COURSE:
+      return {
+        ...state,
+        course: payload,
         loading: false,
       };
     case actionTypes.GET_COURSES:
@@ -35,7 +43,18 @@ const course = (state = initialState, action) => {
         courses: state.courses.filter((course) => course._id !== payload),
         loading: false,
       };
-
+    case actionTypes.CREATE_SUBJECT:
+      return {
+        ...state,
+        course: { ...state.course, subjects: payload },
+        loading: false,
+      };
+    case actionTypes.DELETE_SUBJECT:
+      return {
+        ...state,
+        course: {...state.course, subjects: state.course.subjects.filter((subject) => subject._id !== payload)},
+        loading: false,
+      };
     default:
       return state;
   }

@@ -8,6 +8,7 @@ export const REGISTER_FAIL = 'REGISTER_FAIL';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAIL = 'LOGIN_FAIL';
 
+export const GET_COURSE = "GET_COURSE";
 export const CREATE_COURSE = 'CREATE_COURSE';
 export const COURSE_ERROR = 'COURSE_ERROR';
 export const GET_COURSES = "GET_COURSES";

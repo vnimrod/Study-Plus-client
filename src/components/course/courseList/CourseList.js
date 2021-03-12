@@ -11,7 +11,6 @@ const CourseList = ({ getCourses, courses: { courses, loading } }) => {
     getCourses();
   }, []);
 
-  console.log(courses.length);
   return (
     <div className="CourseList">
       {!loading ? (

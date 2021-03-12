@@ -2,27 +2,29 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { getSubjects } from '../store/actions/subjects';
+import { getCourse } from '../store/actions/courses';
 import Button from '../shared/form-elements/Button';
 import SubjectItem from '../components/subject/subjectItem/SubjectItem';
 import SubjectList from '../components/subject/subjectList/SubjectList';
 import Spinner from '../shared/spinner/Spinner';
 import './CoursePage.css';
 
-const CoursePage = ({ getSubjects, subjects: { subjects, loading } }) => {
-  useEffect(() => {
-    getSubjects();
-  },[]);
+const CoursePage = ({
+  getCourse,
+  courses
+}) => {
 
-  const { coursename } = useParams();
+  const { coursename, cid } = useParams();
+
+  useEffect(() => {
+    getCourse(cid);
+  }, []);
+  console.log(courses.course)
   const [newSubject, setNewSubject] = useState([]);
 
   const newCourseHandler = () => {
-    setNewSubject([...newSubject, <SubjectItem key={newSubject.length}/>]);
-    console.log(newSubject.length)
+    setNewSubject([...newSubject, <SubjectItem key={newSubject.length} />]);
   };
-  
-
   return (
     <div className="CoursePage">
       <div className="CoursePage__header">
@@ -34,7 +36,11 @@ const CoursePage = ({ getSubjects, subjects: { subjects, loading } }) => {
       </div>
       <div className="CoursePage__new-subject">
         <div>{newSubject}</div>
-        {!loading ? <SubjectList subjects={subjects} /> : <Spinner />}
+        {courses.loading ? (
+          <Spinner />
+        ) : (
+          <SubjectList subjects={courses.course.subjects} cid={cid} />
+        )}
       </div>
     </div>
   );
@@ -42,6 +48,7 @@ const CoursePage = ({ getSubjects, subjects: { subjects, loading } }) => {
 
 const mapStateToProps = (state) => ({
   subjects: state.subjects,
+  courses: state.courses,
 });
 
-export default connect(mapStateToProps, { getSubjects })(CoursePage);
+export default connect(mapStateToProps, { getCourse })(CoursePage);
