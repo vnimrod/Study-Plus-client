@@ -54,6 +54,13 @@ const course = (state = initialState, action) => {
         course: {...state.course, subjects: state.course.subjects.filter((subject) => subject._id !== payload)},
         loading: false,
       };
+    case actionTypes.UPLOAD_FILE:
+      return{
+        ...state,
+        course: {...state.course, subjects: state.course.subjects.map((subject)=>
+          subject._id === payload.sid ? {...subject, files: payload.file} : subject
+        )}
+      }
     default:
       return state;
   }

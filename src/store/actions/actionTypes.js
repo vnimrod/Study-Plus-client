@@ -14,6 +14,7 @@ export const COURSE_ERROR = 'COURSE_ERROR';
 export const GET_COURSES = "GET_COURSES";
 export const DELETE_COURSE = "DELETE_COURSE";
 export const UPDATE_COURSE = "UPDATE_COURSE";
+export const UPLOAD_FILE = "UPLOAD_FILE";
 
 export const CREATE_SUBJECT = 'CREATE_SUBJECT';
 export const SUBJECT_ERROR = 'SUBJECT_ERROR';

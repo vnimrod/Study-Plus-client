@@ -185,3 +185,33 @@ export const deleteSubject = (cid, sid) => {
     }
   };
 };
+
+// Handle files
+
+export const uploadFile = (formData, fileName, sid) => {
+  return async (dispatch) => {
+    try {
+      const config = {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      };
+
+      const res = await axios.post(
+        process.env.REACT_APP_BACKEND_URL + `/dashboard/upload`,
+        formData,
+        config
+      );
+
+      console.log(res.data.id)
+
+      dispatch({
+        type: actionTypes.UPLOAD_FILE,
+        payload: {file: {fid: res.data.id, fileName}, sid}
+      })
+
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};

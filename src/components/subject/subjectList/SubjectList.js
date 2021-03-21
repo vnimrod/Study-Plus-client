@@ -4,7 +4,6 @@ import StaticSubject from '../subjectItem/StaticSubject';
 import './SubjectList.css';
 
 const SubjectList = ({ subjects, cid, color }) => {
-  console.log(subjects);
   return (
     <div className="SubjectList">
       {subjects !== null

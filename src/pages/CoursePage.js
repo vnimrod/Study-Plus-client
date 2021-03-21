@@ -8,19 +8,18 @@ import SubjectItem from '../components/subject/subjectItem/SubjectItem';
 import SubjectList from '../components/subject/subjectList/SubjectList';
 import Spinner from '../shared/spinner/Spinner';
 import './CoursePage.css';
-import course from '../store/reducers/courses';
 
 const CoursePage = ({
   getCourse,
   courses
 }) => {
-
+console.log(courses.course)
   const { coursename, cid } = useParams();
 
   useEffect(() => {
     getCourse(cid);
   }, []);
-  console.log(courses.course)
+  
   const [newSubject, setNewSubject] = useState([]);
 
   const newCourseHandler = () => {

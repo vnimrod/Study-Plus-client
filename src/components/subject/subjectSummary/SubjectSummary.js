@@ -1,23 +1,27 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
-import Button from '../../../shared/form-elements/Button'
+import Button from '../../../shared/form-elements/Button';
 import './SubjectSummary.css';
 
-const SubjectSummary = ({setClicked}) => {
+const SubjectSummary = ({ setClicked }) => {
+  const [roll, setRoll] = useState('rollIn');
 
-  const [roll, setRoll] = useState("rollIn");
-  
   const rollOutHandler = () => {
-    setRoll("rollOut")
-    setTimeout(()=>{
+    setRoll('rollOut');
+    setTimeout(() => {
       setClicked(false);
-    },1000)
-  }
+    }, 1000);
+  };
 
   return (
-    <div className={`animated ${roll}`}>
-      <p>על הקורס</p>
-      <Button onClick={rollOutHandler}>X</Button>
+    <div className={`SubjectSummary ${roll}`}>
+      <div className="SubjectSummary__items">
+        <Button onClick={rollOutHandler}>X</Button>
+        <div className="SubjectSummary__items__title">
+          <span>Summary</span>
+          <hr />
+        </div>
+      </div>
     </div>
   );
 };
