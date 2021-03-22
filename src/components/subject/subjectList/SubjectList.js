@@ -15,6 +15,7 @@ const SubjectList = ({ subjects, cid, color }) => {
                 sid={subject._id}
                 subjectName={subject.subjectName}
                 color={color}
+                files={subject.files}
               />
             );
           })

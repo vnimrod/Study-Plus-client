@@ -51,16 +51,26 @@ const course = (state = initialState, action) => {
     case actionTypes.DELETE_SUBJECT:
       return {
         ...state,
-        course: {...state.course, subjects: state.course.subjects.filter((subject) => subject._id !== payload)},
+        course: {
+          ...state.course,
+          subjects: state.course.subjects.filter(
+            (subject) => subject._id !== payload
+          ),
+        },
         loading: false,
       };
     case actionTypes.UPLOAD_FILE:
-      return{
+      return {
         ...state,
-        course: {...state.course, subjects: state.course.subjects.map((subject)=>
-          subject._id === payload.sid ? {...subject, files: payload.file} : subject
-        )}
-      }
+        course: {
+          ...state.course,
+          subjects: state.course.subjects.map((subject) =>
+            subject._id === payload.sid
+              ? { ...subject, files: [...subject.files, payload.file] }
+              : subject
+          ),
+        },
+      };
     default:
       return state;
   }

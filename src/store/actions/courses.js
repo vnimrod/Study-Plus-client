@@ -203,13 +203,10 @@ export const uploadFile = (formData, fileName, sid) => {
         config
       );
 
-      console.log(res.data.id)
-
       dispatch({
         type: actionTypes.UPLOAD_FILE,
-        payload: {file: {fid: res.data.id, fileName}, sid}
-      })
-
+        payload: { file: { fid: res.data.id, fileName }, sid },
+      });
     } catch (error) {
       console.log(error);
     }

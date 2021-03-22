@@ -9,17 +9,13 @@ import SubjectList from '../components/subject/subjectList/SubjectList';
 import Spinner from '../shared/spinner/Spinner';
 import './CoursePage.css';
 
-const CoursePage = ({
-  getCourse,
-  courses
-}) => {
-console.log(courses.course)
+const CoursePage = ({ getCourse, courses }) => {
   const { coursename, cid } = useParams();
 
   useEffect(() => {
     getCourse(cid);
   }, []);
-  
+
   const [newSubject, setNewSubject] = useState([]);
 
   const newCourseHandler = () => {
@@ -39,7 +35,11 @@ console.log(courses.course)
         {courses.loading ? (
           <Spinner />
         ) : (
-          <SubjectList color = {courses.course !== null ? courses.course.color : null} subjects={courses.course !== null ? courses.course.subjects : null} cid={cid} />
+          <SubjectList
+            color={courses.course !== null ? courses.course.color : null}
+            subjects={courses.course !== null ? courses.course.subjects : null}
+            cid={cid}
+          />
         )}
       </div>
     </div>
