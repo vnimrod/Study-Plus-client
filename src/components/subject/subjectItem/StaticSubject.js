@@ -6,6 +6,7 @@ import { uploadFile } from '../../../store/actions/courses';
 import reminder__icon from '../../../assets/about__icon.PNG';
 import Button from '../../../shared/form-elements/Button';
 import SubjectSummary from '../subjectSummary/SubjectSummary';
+import File from '../../file/File';
 import './StaticSubject.css';
 
 const StaticSubject = ({
@@ -59,7 +60,7 @@ const StaticSubject = ({
 
         <ul>
           {files.map((file) => (
-            <li key={file.fileId}>{file.fileName}</li>
+            <File key={file.fileId} file={file} fid={file.fileId}/> 
           ))}
         </ul>
         <div className="StaticSubject__button">

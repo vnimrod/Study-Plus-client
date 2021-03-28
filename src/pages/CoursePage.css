@@ -1,6 +1,6 @@
 .CoursePage {
   background-color: #696969;
-  min-height: 100vh;
+  height: 100vh;
 }
 .CoursePage__header {
   display: flex;
